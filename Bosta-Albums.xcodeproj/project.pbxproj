@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		550687BA2D0A4E250074B5F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 550687B92D0A4E250074B5F9 /* Kingfisher */; };
+		550687BD2D0A4F640074B5F9 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 550687BC2D0A4F640074B5F9 /* CombineCocoa */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bosta-Albums.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550687BD2D0A4F640074B5F9 /* CombineCocoa in Frameworks */,
+				550687BA2D0A4E250074B5F9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = "Bosta-Albums";
 			packageProductDependencies = (
+				550687B92D0A4E250074B5F9 /* Kingfisher */,
+				550687BC2D0A4F640074B5F9 /* CombineCocoa */,
 			);
 			productName = "Bosta-Albums";
 			productReference = 550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */;
@@ -107,6 +116,11 @@
 			);
 			mainGroup = 5506877C2D0A3DAF0074B5F9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				550687B72D0A4D3A0074B5F9 /* XCRemoteSwiftPackageReference "Moya" */,
+				550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 550687862D0A3DAF0074B5F9 /* Products */;
 			projectDirPath = "";
@@ -333,6 +347,46 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		550687B72D0A4D3A0074B5F9 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.2;
+			};
+		};
+		550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		550687B92D0A4E250074B5F9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		550687BC2D0A4F640074B5F9 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5506877D2D0A3DAF0074B5F9 /* Project object */;
 }
