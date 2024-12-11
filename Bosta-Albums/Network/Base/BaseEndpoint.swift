@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import Moya
+
+protocol BaseEndpoint: TargetType {
+    var baseURL: URL { get }
+}
+
+extension BaseEndpoint {
+    var baseURL: URL {
+        return URL(string: NetworkConstants.baseURL)!
+    }
+}
