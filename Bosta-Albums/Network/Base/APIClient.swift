@@ -12,7 +12,7 @@ protocol APIClient {
     associatedtype Router: BaseEndpoint
     func fetchData<T: Codable>(
         target: Router,
-        onComplete: @escaping (Result<T, Error>) -> Void
+        completion: @escaping (Result<T, Error>) -> Void
     )
 }
 
@@ -29,7 +29,7 @@ extension APIClient {
             switch result {
             case .success(let response):
                 do {
-                    guard 200...299 ~= response.statusCode else {
+                    guard response.statusCode == 200 else {
                         completion(.failure(NetworkError.invalidStatusCode(response.statusCode)))
                         return
                     }
