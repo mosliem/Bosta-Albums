@@ -13,6 +13,8 @@
 		55AE7A2F2D0A591B004C7783 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A2E2D0A591B004C7783 /* ReactiveMoya */; };
 		55AE7A312D0A591E004C7783 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A302D0A591E004C7783 /* RxMoya */; };
 		55AE7A332D0A5922004C7783 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A322D0A5922004C7783 /* CombineMoya */; };
+		55F19D2B2D0B42B70085CA88 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 55F19D2A2D0B42B70085CA88 /* SwiftMessages */; };
+		55F19D2D2D0B42B70085CA88 /* SwiftMessages-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 55F19D2C2D0B42B70085CA88 /* SwiftMessages-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +48,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AE7A312D0A591E004C7783 /* RxMoya in Frameworks */,
+				55F19D2B2D0B42B70085CA88 /* SwiftMessages in Frameworks */,
 				550687BD2D0A4F640074B5F9 /* CombineCocoa in Frameworks */,
 				55AE7A332D0A5922004C7783 /* CombineMoya in Frameworks */,
+				55F19D2D2D0B42B70085CA88 /* SwiftMessages-Dynamic in Frameworks */,
 				55AE7A2F2D0A591B004C7783 /* ReactiveMoya in Frameworks */,
 				550687BA2D0A4E250074B5F9 /* Kingfisher in Frameworks */,
 				55AE7A2D2D0A5916004C7783 /* Moya in Frameworks */,
@@ -107,6 +111,8 @@
 				55AE7A2E2D0A591B004C7783 /* ReactiveMoya */,
 				55AE7A302D0A591E004C7783 /* RxMoya */,
 				55AE7A322D0A5922004C7783 /* CombineMoya */,
+				55F19D2A2D0B42B70085CA88 /* SwiftMessages */,
+				55F19D2C2D0B42B70085CA88 /* SwiftMessages-Dynamic */,
 			);
 			productName = "Bosta-Albums";
 			productReference = 550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */;
@@ -140,6 +146,7 @@
 				550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */,
+				55F19D292D0B42B70085CA88 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 550687862D0A3DAF0074B5F9 /* Products */;
@@ -393,6 +400,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		55F19D292D0B42B70085CA88 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -425,6 +440,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
+		};
+		55F19D2A2D0B42B70085CA88 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55F19D292D0B42B70085CA88 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+		55F19D2C2D0B42B70085CA88 /* SwiftMessages-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55F19D292D0B42B70085CA88 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = "SwiftMessages-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

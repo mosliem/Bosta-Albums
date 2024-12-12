@@ -18,11 +18,20 @@ protocol APIClient {
 
 extension APIClient {
 
+    
+    private var provider: MoyaProvider<Router> {
+        return MoyaProvider<Router>()
+    }
+
+    private var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        return decoder
+    }
+    
     func fetchData<T: Codable>(
         target: Router,
         completion: @escaping (Result<T, Error>) -> Void
     ) {
-        let provider = MoyaProvider<Router>()
 
         provider.request(target, callbackQueue: .main) { result in
             
@@ -34,8 +43,9 @@ extension APIClient {
                         return
                     }
                     
-                    let decodedData = try JSONDecoder().decode(T.self, from: response.data)
+                    let decodedData = try decoder.decode(T.self, from: response.data)
                     completion(.success(decodedData))
+                    
                 } catch {
                     completion(.failure(NetworkError.decodingFailed(error)))
                 }
