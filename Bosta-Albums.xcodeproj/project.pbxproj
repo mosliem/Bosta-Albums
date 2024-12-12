@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		550687BA2D0A4E250074B5F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 550687B92D0A4E250074B5F9 /* Kingfisher */; };
+		550687BD2D0A4F640074B5F9 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 550687BC2D0A4F640074B5F9 /* CombineCocoa */; };
+		55AE7A2D2D0A5916004C7783 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A2C2D0A5916004C7783 /* Moya */; };
+		55AE7A2F2D0A591B004C7783 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A2E2D0A591B004C7783 /* ReactiveMoya */; };
+		55AE7A312D0A591E004C7783 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A302D0A591E004C7783 /* RxMoya */; };
+		55AE7A332D0A5922004C7783 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A322D0A5922004C7783 /* CombineMoya */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bosta-Albums.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AE7A312D0A591E004C7783 /* RxMoya in Frameworks */,
+				550687BD2D0A4F640074B5F9 /* CombineCocoa in Frameworks */,
+				55AE7A332D0A5922004C7783 /* CombineMoya in Frameworks */,
+				55AE7A2F2D0A591B004C7783 /* ReactiveMoya in Frameworks */,
+				550687BA2D0A4E250074B5F9 /* Kingfisher in Frameworks */,
+				55AE7A2D2D0A5916004C7783 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				550687872D0A3DAF0074B5F9 /* Bosta-Albums */,
+				55AE7A2B2D0A5916004C7783 /* Frameworks */,
 				550687862D0A3DAF0074B5F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +72,13 @@
 				550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		55AE7A2B2D0A5916004C7783 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +101,12 @@
 			);
 			name = "Bosta-Albums";
 			packageProductDependencies = (
+				550687B92D0A4E250074B5F9 /* Kingfisher */,
+				550687BC2D0A4F640074B5F9 /* CombineCocoa */,
+				55AE7A2C2D0A5916004C7783 /* Moya */,
+				55AE7A2E2D0A591B004C7783 /* ReactiveMoya */,
+				55AE7A302D0A591E004C7783 /* RxMoya */,
+				55AE7A322D0A5922004C7783 /* CombineMoya */,
 			);
 			productName = "Bosta-Albums";
 			productReference = 550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */;
@@ -107,6 +136,11 @@
 			);
 			mainGroup = 5506877C2D0A3DAF0074B5F9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 550687862D0A3DAF0074B5F9 /* Products */;
 			projectDirPath = "";
@@ -147,7 +181,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TCD4XHJF85;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Bosta-Albums/Info.plist";
+				INFOPLIST_FILE = "Bosta-Albums/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -174,7 +208,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TCD4XHJF85;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Bosta-Albums/Info.plist";
+				INFOPLIST_FILE = "Bosta-Albums/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -333,6 +367,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.2;
+			};
+		};
+		550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+		553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		550687B92D0A4E250074B5F9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 550687B82D0A4E250074B5F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		550687BC2D0A4F640074B5F9 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 550687BB2D0A4F640074B5F9 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		55AE7A2C2D0A5916004C7783 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		55AE7A2E2D0A591B004C7783 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		55AE7A302D0A591E004C7783 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		55AE7A322D0A5922004C7783 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553710CE2D0A54CB00C5EC3F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5506877D2D0A3DAF0074B5F9 /* Project object */;
 }
