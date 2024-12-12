@@ -15,7 +15,7 @@ enum UserService {
 extension UserService: BaseEndpoint {
     
     var path: String {
-        let randomUserID = Int.random(in: 1...6)
+        let randomUserID = Int.random(in: 1...5)
         return "users/\(randomUserID)"
     }
     
