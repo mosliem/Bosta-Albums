@@ -21,11 +21,7 @@ extension UIViewController {
         return LoaderView.instanceFromNib()
     }
     
-    func showAppLoader(
-        overContext: Bool = false,
-        onView view: UIView? = nil,
-        showAsBlankView: Bool = false
-    ) {
+    func showAppLoader() {
         let loader = self.loader
         loader.activityIndicator.color = .darkGray
         
