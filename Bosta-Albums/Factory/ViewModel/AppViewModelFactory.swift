@@ -9,8 +9,11 @@ import Foundation
 
 class AppViewModelFactory: AppViewModelFactoryProtocol {
     
-    func createUserProfileVM() -> any UserProfileVMProtocol {
-    
+    func createUserProfileVM(
+        router: UserProfileRouterProtocol,
+        with provider: UserServiceProvider
+    ) ->  UserProfileViewModel {
+        return  UserProfileViewModel(router: router, provider: provider)
     }
     
 }

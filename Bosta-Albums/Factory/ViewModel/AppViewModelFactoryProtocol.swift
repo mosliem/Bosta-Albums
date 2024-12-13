@@ -8,5 +8,8 @@
 import Foundation
 
 protocol AppViewModelFactoryProtocol {
-    func createUserProfileVM() -> UserProfileVMProtocol
+    func createUserProfileVM(
+        router: UserProfileRouterProtocol,
+        with provider: UserServiceProvider
+    ) -> UserProfileViewModel
 }
