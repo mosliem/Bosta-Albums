@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class AppProviderFactory: AppProviderFactoryProtocol {
+    func createUserProfileProvider() -> UserServiceProvider {
+        return UserServiceProvider()
+    }
+}

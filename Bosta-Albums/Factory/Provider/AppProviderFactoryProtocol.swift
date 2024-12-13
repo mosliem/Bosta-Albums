@@ -5,4 +5,8 @@
 //  Created by mohamed sliem on 12/12/2024.
 //
 
-import Foundation
+import Moya
+
+protocol AppProviderFactoryProtocol {
+    func createUserProfileProvider() -> UserServiceProvider
+}
