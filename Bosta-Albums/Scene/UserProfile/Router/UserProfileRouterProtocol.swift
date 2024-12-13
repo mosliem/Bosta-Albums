@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol UserProfileRouterProtocol: BaseRouterProtocol {
+    func navigationToAlbumsList(with userId: Int)
+}
