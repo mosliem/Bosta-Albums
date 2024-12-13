@@ -7,25 +7,22 @@
 
 import Foundation
 
-protocol ServiceProviderProtocol {
+protocol UserServiceProviderProtocol {
     func getUser(completion: @escaping (Result<UserModel?, Error>) -> Void)
     
     func getAlbums(userID: Int, completion: @escaping (Result<[AlbumModel]?, Error>) -> Void)
-    
-//    func getSelectedAlbum(albumID: Int, completion: @escaping (Result<[photo]?, Error>) -> Void)
-    
 }
 
-class ServiceProvider: APIClient, ServiceProviderProtocol {
+class UserServiceProvider: APIClient, UserServiceProviderProtocol {
     
-    typealias Router = AlbumsService & UserService
+    typealias Router = UserService
     
     func getUser(completion: @escaping (Result<UserModel?, any Error>) -> Void) {
-        <#code#>
+        fetchData(target: .getUser, completion: completion)
     }
     
     func getAlbums(userID: Int, completion: @escaping (Result<[AlbumModel]?, any Error>) -> Void) {
-        <#code#>
+        fetchData(target: .getAlbums(userID: userID), completion: completion)
     }
     
 }
