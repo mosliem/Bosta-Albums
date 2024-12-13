@@ -7,7 +7,9 @@
 
 import Combine
 
-protocol BaseViewModelProtocol {
+protocol BaseViewModelProtocol<Provider> {
+    associatedtype Provider
+    
     var errorMessage: CurrentValueSubject<String, Never> { get set }
     
     var isLoading: CurrentValueSubject<Bool, Never>  { get }

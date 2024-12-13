@@ -14,8 +14,20 @@
 		55AE7A312D0A591E004C7783 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A302D0A591E004C7783 /* RxMoya */; };
 		55AE7A332D0A5922004C7783 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 55AE7A322D0A5922004C7783 /* CombineMoya */; };
 		55F19D2B2D0B42B70085CA88 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 55F19D2A2D0B42B70085CA88 /* SwiftMessages */; };
-		55F19D2D2D0B42B70085CA88 /* SwiftMessages-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 55F19D2C2D0B42B70085CA88 /* SwiftMessages-Dynamic */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55F19D9C2D0BA08C0085CA88 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bosta-Albums.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +63,6 @@
 				55F19D2B2D0B42B70085CA88 /* SwiftMessages in Frameworks */,
 				550687BD2D0A4F640074B5F9 /* CombineCocoa in Frameworks */,
 				55AE7A332D0A5922004C7783 /* CombineMoya in Frameworks */,
-				55F19D2D2D0B42B70085CA88 /* SwiftMessages-Dynamic in Frameworks */,
 				55AE7A2F2D0A591B004C7783 /* ReactiveMoya in Frameworks */,
 				550687BA2D0A4E250074B5F9 /* Kingfisher in Frameworks */,
 				55AE7A2D2D0A5916004C7783 /* Moya in Frameworks */,
@@ -95,6 +106,7 @@
 				550687812D0A3DAF0074B5F9 /* Sources */,
 				550687822D0A3DAF0074B5F9 /* Frameworks */,
 				550687832D0A3DAF0074B5F9 /* Resources */,
+				55F19D9C2D0BA08C0085CA88 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,7 +124,6 @@
 				55AE7A302D0A591E004C7783 /* RxMoya */,
 				55AE7A322D0A5922004C7783 /* CombineMoya */,
 				55F19D2A2D0B42B70085CA88 /* SwiftMessages */,
-				55F19D2C2D0B42B70085CA88 /* SwiftMessages-Dynamic */,
 			);
 			productName = "Bosta-Albums";
 			productReference = 550687852D0A3DAF0074B5F9 /* Bosta-Albums.app */;
@@ -445,11 +456,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 55F19D292D0B42B70085CA88 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
 			productName = SwiftMessages;
-		};
-		55F19D2C2D0B42B70085CA88 /* SwiftMessages-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 55F19D292D0B42B70085CA88 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
-			productName = "SwiftMessages-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
