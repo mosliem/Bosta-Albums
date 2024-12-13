@@ -42,6 +42,7 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
             dataSourceInjection()
         }
         getUser()
+        isLoading.send(true)
     }
     
     func didPressAlbum(at index: Int) {
@@ -50,12 +51,16 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
     
     
     private func getUser() {
+
         provider.getUser { [weak self] result in
+            self?.isLoading.send(false)
+            
             switch result {
             case .success(let user):
                 if let user = user {
                     self?.userInfo.send(user)
                 }
+                
                 self?.userId = user?.id ?? 0
             case .failure(let error):
                 self?.errorMessage.send(error.localizedDescription)
@@ -69,8 +74,9 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
         }
         
         provider.getAlbums(userID: userId) { [weak self] result in
+            self?.isLoading.send(false)
+            
             switch result {
-                
             case .success(let albums):
                 guard let albums else {
                     return
