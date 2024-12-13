@@ -13,6 +13,8 @@ protocol UserProfileVMProtocol: BaseViewModelProtocol<UserServiceProvider> {
         
     var updateAlbums: PassthroughSubject<Bool, Never> { get set }
     
+    var noAlbums: PassthroughSubject<Bool, Never> { get set }
+    
     func viewDidLoad()
     
     func didPressAlbum(at index: Int)

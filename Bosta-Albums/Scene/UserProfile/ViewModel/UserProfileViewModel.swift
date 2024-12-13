@@ -14,6 +14,8 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
     
     var updateAlbums = PassthroughSubject<Bool, Never>()
     
+    var noAlbums = PassthroughSubject<Bool, Never>()
+    
     var dataSourceInjection: (() -> Void)?
     
     private var albums: [AlbumModel] = []
@@ -51,7 +53,7 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
     
     
     private func getUser() {
-
+        self.isLoading.send(true)
         provider.getUser { [weak self] result in
             self?.isLoading.send(false)
             
@@ -73,20 +75,25 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
             return
         }
         
+        self.isLoading.send(true)
+
         provider.getAlbums(userID: userId) { [weak self] result in
             self?.isLoading.send(false)
             
             switch result {
             case .success(let albums):
-                guard let albums else {
+                guard let albums, albums.count > 0 else {
+                    self?.noAlbums.send(true)
                     return
                 }
                 
                 self?.albums = albums
+                self?.noAlbums.send(false)
                 self?.updateAlbums.send(true)
 
             case .failure(let error):
                 self?.errorMessage.send(error.localizedDescription)
+                self?.noAlbums.send(true)
             }
         }
     }
