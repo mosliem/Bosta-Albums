@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol AppViewControllerFactoryProtocol {
+    func createUserProfileVC(
+        with viewModel: UserProfileViewModel
+    ) -> UserProfileVC
+}

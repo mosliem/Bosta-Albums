@@ -35,13 +35,13 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] message in
                 self?.showErrorMessage(message)
-        }
-        .store(in: &cancellable)
+            }
+            .store(in: &cancellable)
         
         viewModel.isLoading
             .receive(on: DispatchQueue.main)
             .sink { [weak self] loadingState in
-                self?.showAppLoader()
+                loadingState ? self?.showAppLoader() : self?.hideAppLoader()
             }
             .store(in: &cancellable)
         
@@ -51,7 +51,7 @@ class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController {
 extension BaseViewController {
     
     func showErrorMessage(_ message: String?) {
-        guard let message else {
+        guard let message, !message.isEmpty else {
             return
         }
         vibrate(feedbackType: .error)
