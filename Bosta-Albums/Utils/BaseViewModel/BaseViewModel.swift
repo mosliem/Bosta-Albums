@@ -8,12 +8,14 @@
 import Combine
 import Moya
 
-class BaseViewModel<Provider: APIClient, Service: BaseEndpoint>: BaseViewModelProtocol {
+class BaseViewModel<Provider: APIClient>: BaseViewModelProtocol {
+    typealias Service = Provider
+    
     var errorMessage = CurrentValueSubject<String, Never>("")
     
     var isLoading = CurrentValueSubject<Bool, Never>(false)
     
-    private var provider: Provider
+    var provider: Provider
     
     init(provider: Provider) {
         self.provider = provider
