@@ -8,10 +8,18 @@
 import Foundation
 
 class AppViewControllerFactory: AppViewControllerFactoryProtocol {
+
     
     func createUserProfileVC(
         with viewModel: UserProfileViewModel
     ) -> UserProfileVC {
         return UserProfileVC(viewModel: viewModel)
     }
+    
+    func createAlbumPhotosVC(
+        with viewModel: AlbumPhotosVM
+    ) -> AlbumPhotosVC {
+        return AlbumPhotosVC(viewModel: viewModel)
+    }
+    
 }
