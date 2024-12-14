@@ -48,9 +48,39 @@ extension DIContainer {
         
         let dataSource = AlbumsDataSource(delegate: viewModel)
 
-        let vc = UserProfileVC(viewModel: viewModel)
+        let vc = viewControllerFactory.createUserProfileVC(with: viewModel)
         viewModel.dataSourceInjection = { [weak vc] in
             vc?.tableView.dataSource = dataSource
+        }
+        return vc
+    }
+}
+
+extension DIContainer {
+    
+    func AlbumPhotosDI(
+        with navigationController: UINavigationController,
+        title: String,
+        id: Int
+    ) -> AlbumPhotosVC {
+        
+        let router = routerFactory.createAlbumPhotosRouter(with: navigationController)
+        
+        let provider = providerFactory.createAlbumPhotosProvider()
+        
+        let viewModel = viewModelFactory.createAlbumPhotosVM(
+            router: router,
+            with: provider,
+            title: title,
+            albumId: id
+        )
+        
+        let dataSource = AlbumPhotosDataSource(delegate: viewModel)
+        
+        let vc = viewControllerFactory.createAlbumPhotosVC(with: viewModel)
+        
+        viewModel.dataSourceInjection = { [weak vc] in
+            vc?.collectionView.dataSource = dataSource
         }
         return vc
     }

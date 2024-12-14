@@ -9,4 +9,5 @@ import Moya
 
 protocol AppProviderFactoryProtocol {
     func createUserProfileProvider() -> UserServiceProvider
+    func createAlbumPhotosProvider() -> AlbumPhotosServiceProvider
 }

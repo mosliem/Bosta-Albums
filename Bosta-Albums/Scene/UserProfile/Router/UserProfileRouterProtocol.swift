@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UserProfileRouterProtocol: BaseRouterProtocol {
-    func navigationToAlbumsList(with userId: Int)
+    func navigationToAlbumsList(with userId: Int, _ title: String)
 }

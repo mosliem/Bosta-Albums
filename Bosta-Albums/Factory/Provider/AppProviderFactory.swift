@@ -8,7 +8,13 @@
 import Foundation
 
 class AppProviderFactory: AppProviderFactoryProtocol {
+    
     func createUserProfileProvider() -> UserServiceProvider {
         return UserServiceProvider()
     }
+ 
+    func createAlbumPhotosProvider() -> AlbumPhotosServiceProvider {
+        return AlbumPhotosServiceProvider()
+    }
+
 }

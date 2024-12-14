@@ -11,4 +11,8 @@ protocol AppRouterFactoryProtocol {
     func createUserProfileRouter(
         with navigationController: UINavigationController
     ) -> UserProfileRouterProtocol
+    
+    func createAlbumPhotosRouter(
+        with navigationController: UINavigationController
+    ) -> AlbumPhotosRouterProtocol
 }

@@ -12,4 +12,11 @@ protocol AppViewModelFactoryProtocol {
         router: UserProfileRouterProtocol,
         with provider: UserServiceProvider
     ) -> UserProfileViewModel
+    
+    func createAlbumPhotosVM(
+        router: AlbumPhotosRouterProtocol,
+        with provider: AlbumPhotosServiceProvider,
+        title: String,
+        albumId: Int
+    ) -> AlbumPhotosVM
 }

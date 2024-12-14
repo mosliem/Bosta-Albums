@@ -15,7 +15,16 @@ class UserProfileRouter: UserProfileRouterProtocol {
         self.navigationController = navigationController
     }
     
-    func navigationToAlbumsList(with userId: Int) {
+    func navigationToAlbumsList(with userId: Int, _ title: String) {
+        let albumPhotosVC = DIContainer.shared.AlbumPhotosDI(
+            with: navigationController,
+            title: title,
+            id: userId
+        )
         
+        self.navigationController.pushViewController(
+            albumPhotosVC,
+            animated: true
+        )
     }
 }

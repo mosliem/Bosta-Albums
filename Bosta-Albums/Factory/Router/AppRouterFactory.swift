@@ -16,4 +16,13 @@ class AppRouterFactory: AppRouterFactoryProtocol {
             navigationController: navigationController
         )
     }
+    
+    func createAlbumPhotosRouter(
+        with navigationController: UINavigationController
+    ) -> any AlbumPhotosRouterProtocol {
+        return AlbumPhotosRouter(
+            navigationController: navigationController
+        )
+    }
+    
 }
