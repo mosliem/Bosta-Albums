@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum AlbumsService {
-    case getSelectedAlbum(AlbumID: Int)
+    case getSelectedAlbum(albumID: Int)
 }
 
 extension AlbumsService: BaseEndpoint {
