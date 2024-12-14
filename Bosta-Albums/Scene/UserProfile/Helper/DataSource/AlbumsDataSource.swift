@@ -9,14 +9,14 @@ import UIKit
 
 class AlbumsDataSource: NSObject, UITableViewDataSource {
     
-    private var delegate: AlbumsDataSourceDelegate
+    private weak var delegate: AlbumsDataSourceDelegate?
     
     init(delegate: AlbumsDataSourceDelegate) {
         self.delegate = delegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return delegate.numberOfRows()
+        return delegate?.numberOfRows() ?? 0
     }
     
     func tableView(
@@ -31,7 +31,10 @@ class AlbumsDataSource: NSObject, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let title = delegate.getCellTitle(index: indexPath.row)
+        guard let title = delegate?.getCellTitle(index: indexPath.row) else {
+            return UITableViewCell()
+        }
+        
         cell.setup(title: title)
         return cell
     }

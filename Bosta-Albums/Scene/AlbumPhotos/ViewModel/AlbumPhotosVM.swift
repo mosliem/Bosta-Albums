@@ -17,11 +17,11 @@ class AlbumPhotosVM: BaseViewModel<AlbumPhotosServiceProvider>, AlbumPhotosVMPro
     
     var selectedImage = PassthroughSubject<Int, Never>()
     
-    var insertPhotos = PassthroughSubject<[IndexPath], Never>()
-
     @Published var searchBehaviorEnd: Void = ()
 
     @Published var searchText: String = ""
+    
+    @Published var title: String = ""
     
     var dataSourceInjection: (() -> Void)?
     
@@ -37,10 +37,12 @@ class AlbumPhotosVM: BaseViewModel<AlbumPhotosServiceProvider>, AlbumPhotosVMPro
     init(
         provider: AlbumPhotosServiceProvider,
         router: AlbumPhotosRouterProtocol,
+        title: String,
         id: Int
     ) {
         self.albumId = id
         self.router = router
+        self.title = title
         super.init(provider: provider)
     }
     

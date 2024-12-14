@@ -24,7 +24,6 @@ class AlbumPhotosVC: BaseViewController<AlbumPhotosVM> {
         super.bindViewModel()
         
         bindPhotosUpdates()
-        bindPhotosInsertion()
     }
     
     private func setupView() {
@@ -33,6 +32,11 @@ class AlbumPhotosVC: BaseViewController<AlbumPhotosVM> {
         
         setCollectionViewPublisher()
         setSearchControllerPublisher()
+        
+        viewModel.$title.sink { [weak self] title in
+            self?.title = title
+        }
+        .store(in: &cancellable)
     }
     
     private func setupCollectionView() {
@@ -90,12 +94,5 @@ class AlbumPhotosVC: BaseViewController<AlbumPhotosVM> {
         }
         .store(in: &cancellable)
     }
-    
-    private func bindPhotosInsertion() {
-        viewModel.insertPhotos.sink { [weak self] indices in
-            self?.collectionView.insertItems(at: indices)
-        }
-        .store(in: &cancellable)
 
-    }
 }

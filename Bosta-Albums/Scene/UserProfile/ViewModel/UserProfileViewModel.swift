@@ -48,7 +48,8 @@ class UserProfileViewModel: BaseViewModel<UserServiceProvider>, UserProfileVMPro
     }
     
     func didPressAlbum(at index: Int) {
-        router.navigationToAlbumsList(with: index)
+        let album = albums[index]
+        router.navigationToAlbumsList(with: album.id, album.title)
     }
     
     
