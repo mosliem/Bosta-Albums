@@ -85,3 +85,20 @@ extension DIContainer {
         return vc
     }
 }
+
+extension DIContainer {
+    
+    func PhotoViewerDI(
+        with navigationController: UINavigationController,
+        url: String
+    ) -> PhotoViewerVC {
+        
+        let router = routerFactory.createPhotoViewerRouter(with: navigationController)
+        
+        let viewModel = viewModelFactory.createPhotoViewerVM(router: router, url: url)
+        
+        let vc = viewControllerFactory.createPhotoViewerVC(with: viewModel)
+ 
+        return vc
+    }
+}

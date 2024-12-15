@@ -11,6 +11,8 @@ import Moya
 class BaseViewModel<Provider: APIClient>: BaseViewModelProtocol {
     typealias Service = Provider
     
+    var cancellables = Set<AnyCancellable>()
+
     var errorMessage = CurrentValueSubject<String, Never>("")
     
     var isLoading = CurrentValueSubject<Bool, Never>(false)

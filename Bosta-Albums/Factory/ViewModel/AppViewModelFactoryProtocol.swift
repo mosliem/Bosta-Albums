@@ -19,4 +19,9 @@ protocol AppViewModelFactoryProtocol {
         title: String,
         albumId: Int
     ) -> AlbumPhotosVM
+    
+    func createPhotoViewerVM(
+        router: any PhotoViewerRouterProtocol,
+        url: String
+    ) -> PhotoViewerVMProtocol
 }

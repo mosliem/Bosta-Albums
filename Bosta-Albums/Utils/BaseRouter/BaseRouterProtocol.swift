@@ -9,9 +9,15 @@ import UIKit
 
 protocol BaseRouterProtocol {
     var navigationController: UINavigationController { get set }
+    
 }
 
 extension BaseRouterProtocol {
+
+    unowned var presentedView: UIViewController? {
+        return navigationController.topViewController
+    }
+    
     func pop(animated: Bool = true) {
         navigationController.popViewController(animated: animated)
     }

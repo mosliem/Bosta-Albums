@@ -22,4 +22,10 @@ class AppViewControllerFactory: AppViewControllerFactoryProtocol {
         return AlbumPhotosVC(viewModel: viewModel)
     }
     
+    func createPhotoViewerVC(
+        with viewModel: PhotoViewerVMProtocol
+    ) -> PhotoViewerVC {
+        return PhotoViewerVC(viewModel: viewModel)
+    }
+    
 }

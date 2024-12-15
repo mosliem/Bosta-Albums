@@ -10,9 +10,6 @@ import Foundation
 
 class AlbumPhotosVM: BaseViewModel<AlbumPhotosServiceProvider>, AlbumPhotosVMProtocol {
     
-    var cancellables = Set<AnyCancellable>()
-    
-
     var updatePhotos = PassthroughSubject<Bool, Never>()
     
     var selectedImage = PassthroughSubject<Int, Never>()
@@ -50,6 +47,7 @@ class AlbumPhotosVM: BaseViewModel<AlbumPhotosServiceProvider>, AlbumPhotosVMPro
         dataSourceInjection?()
         getPhotos()
         bindSearchUpdates()
+        bindSelectedImage()
     }
     
     private func getPhotos() {
@@ -94,6 +92,14 @@ class AlbumPhotosVM: BaseViewModel<AlbumPhotosServiceProvider>, AlbumPhotosVMPro
     private func setLastPresentedPhoto() {
         presentedPhotos = photos.map { $0.thumbnailURL }
         updatePhotos.send(true)
+    }
+    
+    private func bindSelectedImage() {
+        selectedImage.sink { [weak self] index in
+            let photo = self?.photos[index]
+            self?.router.navigateToPhotoViewer(with: photo?.url ?? "")
+        }
+        .store(in: &cancellables)
     }
 }
 

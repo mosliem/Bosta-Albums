@@ -16,7 +16,8 @@ class AlbumPhotosRouter: AlbumPhotosRouterProtocol {
     }
     
     func navigateToPhotoViewer(with url: String) {
-        
+        let vc = DIContainer.shared.PhotoViewerDI(with: navigationController, url: url)
+        self.navigationController.pushViewController(vc, animated: true)
     }
     
 }
