@@ -25,4 +25,12 @@ class AppRouterFactory: AppRouterFactoryProtocol {
         )
     }
     
+    func createPhotoViewerRouter(
+        with navigationController: UINavigationController
+    ) -> any PhotoViewerRouterProtocol {
+        return PhotoViewerRouter(
+            navigationController: navigationController
+        )
+    }
+    
 }

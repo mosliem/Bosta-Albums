@@ -15,4 +15,8 @@ protocol AppRouterFactoryProtocol {
     func createAlbumPhotosRouter(
         with navigationController: UINavigationController
     ) -> AlbumPhotosRouterProtocol
+    
+    func createPhotoViewerRouter(
+        with navigationController: UINavigationController
+    ) -> any PhotoViewerRouterProtocol
 }

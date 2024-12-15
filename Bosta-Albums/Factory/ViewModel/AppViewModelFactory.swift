@@ -34,4 +34,17 @@ class AppViewModelFactory: AppViewModelFactoryProtocol {
         )
     }
     
+    
+    func createPhotoViewerVM(
+        router: any PhotoViewerRouterProtocol,
+        url: String
+    ) -> PhotoViewerVMProtocol {
+        
+        return PhotoViewerViewModel(
+            url: url,
+            router: router
+        )
+    }
+    
+
 }

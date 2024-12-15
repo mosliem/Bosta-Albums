@@ -15,4 +15,8 @@ protocol AppViewControllerFactoryProtocol {
     func createAlbumPhotosVC(
         with viewModel: AlbumPhotosVM
     ) -> AlbumPhotosVC
+    
+    func createPhotoViewerVC(
+        with viewModel: PhotoViewerVMProtocol
+    ) -> PhotoViewerVC
 }
