@@ -9,7 +9,5 @@
 - XIB Files
 
 ### Screenshots 
-<img src = https://github.com/mosliem/Bosta-Albums/blob/develop/profile-albums.png width = 300 height = 650>
-<img src = https://github.com/mosliem/Bosta-Albums/blob/develop/album-photos.png width = 300 height = 650>
-<img src = https://github.com/mosliem/Bosta-Albums/blob/develop/photo-zoom-share.png width = 300 height = 650>
+<img src = https://github.com/mosliem/Bosta-Albums/blob/develop/profile-albums.png width = 250 height = 550> <img src = https://github.com/mosliem/Bosta-Albums/blob/develop/album-photos.png width = 250 height = 550> <img src = https://github.com/mosliem/Bosta-Albums/blob/develop/photo-zoom-share.png width = 250 height = 550>
 
